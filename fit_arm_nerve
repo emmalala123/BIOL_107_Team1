@@ -20,11 +20,14 @@ rawdata = data(2:end,:); % unpack values
 G = repmat(1:length(locations),Num_reps,1); % groups for anova
 anova_p = anova1([rawdata, G, 'off']) % preform one-way anova
 
+%%%%%%%%%%%%% I get this error?
+% Error using horzcat
+% Dimensions of arrays being concatenated are not consistent.
+
 if anova_p<0.05, % if significant
 
 % gaussfit function
-[a,b,c,d] = gaussfit(x,y); % preform gaussfit funcition %%%%%%%%%%%%%%%%%%%%%%%%%(NOT FINISHED?)%%%%%%%%%%%%%%%%%%%%%%%%
-
+[a,b,c,d] = gaussfit(locations,data); % preform gaussfit funcition %%%%%%% Need to make our own function
 
 
 else, % if not significant
