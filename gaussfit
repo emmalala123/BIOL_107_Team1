@@ -1,0 +1,11 @@
+function [A, B, C, D] = gaussfit(x,y)
+% GAUSSFIT fits the data to a gaussian function
+
+
+
+
+
+
+
+
+end
