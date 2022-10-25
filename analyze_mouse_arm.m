@@ -25,7 +25,7 @@ if n<40
 end
 myfilename = fullfile(mycwd,mydir,myexp, trial, file);
 
-[a, b, c, d] = fit_arm_nerve(myfilename);
+%[a, b, c, d] = fit_arm_nerve(myfilename);
 
 
 clear myfilename

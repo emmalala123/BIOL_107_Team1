@@ -1,4 +1,4 @@
-
+function [a,b,c,d] = fit_arm_nerve(myfilename)
 % FIT_ARM_NERVE Fits the nerve data to a Gaussian curve
 %   [A,B,C,D]=FIT_ARM_NERVE(FILENAME)
 
@@ -23,7 +23,7 @@ anova_p = anova1(rawdata(:), G(:), 'off'); % perform one-way anova
 if anova_p<0.05, % if significant
 
 % gaussfit function
-[a,b,c,d] = gaussfit(locations,data); % perform gaussfit funcition
+%[a,b,c,d] = gaussfit(locations,data); % perform gaussfit funcition
 
 
 else, % if not significant

@@ -1,6 +1,9 @@
 function [a, b, c, d] = gaussfit(x,y)
 % GAUSSFIT fits the data to a gaussian function
 
+bestfit = [];
+lowerror = Inf;
+
 i = 0;
 while i<30,
     % will choose new start point randomly
