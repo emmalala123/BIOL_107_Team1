@@ -1,4 +1,4 @@
-function [a, b, c, d] = fit_arm_nerve(filename)
+function [a, b, c, d] = fit_arm_nerve(myfilename)
 
 % FIT_ARM_NERVE Fits the nerve data to a Gaussian curve
 %   [A,B,C,D]=FIT_ARM_NERVE(FILENAME)
@@ -12,7 +12,7 @@ function [a, b, c, d] = fit_arm_nerve(filename)
 %  is not significant with alpha 0.05, then A,B,C,and D
 %  are set to NaN.
 
-data = load(filename, '-ascii'); % load in the data
+data = load(myfilename, '-ascii'); % load in the data
 locations = data(1,:); % unpack first row
 rawdata = data(2:end,:); % unpack values
 Num_reps = size(rawdata,1); % number of rows in rawdata
@@ -24,7 +24,7 @@ anova_p = anova1(rawdata(:), G(:), 'off'); % perform one-way anova
 if anova_p<0.05, % if significant
 
 % gaussfit function
-[a,b,c,d] = gaussfit(locations,data); % perform gaussfit funcition %%%%%%% Need to make our own function
+[a,b,c,d] = gaussfit(locations,data); % perform gaussfit funcition
 
 
 else, % if not significant
