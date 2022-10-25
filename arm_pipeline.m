@@ -73,4 +73,4 @@ d_mean_wt = mean(d_wt_good)
 
 % preform statistical analysis on the means
 
-[d_h, d_p_t] = ttest2(d_mean_wt, d_mean_ko)
+[d_h, d_p_t] = ttest2(d_mean_wt, d_mean_ko) 
