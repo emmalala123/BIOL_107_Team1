@@ -1,8 +1,8 @@
-function [A, B, C, D] = gaussfit(x,y)
+function [a, b, c, d] = gaussfit(x,y)
 % GAUSSFIT fits the data to a gaussian function
 
 i = 0
-while i<reps,
+while i<30,
     % will choose new start point randomly
 
     gauss = fittype('a+b*exp(-((x-c).^2)/((2*d^2)))'); % fit to gauss
@@ -28,9 +28,10 @@ gauss = setoptions(gauss, fo);
 end;
 
 fit_coeffs = coeffvalues(bestfit);
-A = fit_coeffs(1);
-B = fit_coeffs(2);
-C = fit_coeffs(3);
-D = fit_coeffs(4); 
+a = fit_coeffs(1);
+b = fit_coeffs(2);
+c = fit_coeffs(3);
+d = fit_coeffs(4); 
+
 
 end
