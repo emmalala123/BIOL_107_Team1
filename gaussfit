@@ -28,10 +28,9 @@ gauss = setoptions(gauss, fo);
 end;
 
 fit_coeffs = coeffvalues(bestfit);
-a = fit_coeffs(1);
-b = fit_coeffs(2);
-c = fit_coeffs(3);
-d = fit_coeffs(4); 
-
+A = fit_coeffs(1);
+B = fit_coeffs(2);
+C = fit_coeffs(3);
+D = fit_coeffs(4); 
 
 end
