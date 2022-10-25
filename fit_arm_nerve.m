@@ -1,4 +1,3 @@
-function [a, b, c, d] = fit_arm_nerve(myfilename)
 
 % FIT_ARM_NERVE Fits the nerve data to a Gaussian curve
 %   [A,B,C,D]=FIT_ARM_NERVE(FILENAME)
