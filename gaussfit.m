@@ -1,9 +1,7 @@
 function [a, b, c, d] = gaussfit(x,y)
 % GAUSSFIT fits the data to a gaussian function
-bestfit = [];
-lowerror = Inf;
 
-i = 0
+i = 0;
 while i<30,
     % will choose new start point randomly
 
@@ -11,11 +9,11 @@ while i<30,
 fo = fitoptions(gauss);
 
  % guess parameters
-a_guess = mean(rawdata);
-[b_guess, location] = max(rawdata);
+a_guess = mean(y);
+[b_guess, x] = max(y);
 c_guess = randn;
 d_guess = 1;
-fo.StartPoint = [a_guess; b_guess; c_guess; d_guess]
+fo.StartPoint = [a_guess; b_guess; c_guess; d_guess];
         % do we need to set these limits?
 % fo.Lower = [-b_guess; 0; min(rawdata(:,1)); -Inf];  
 % fo.Upper = [b_guess; Inf; max(rawdata(:,1)); Inf]; 
