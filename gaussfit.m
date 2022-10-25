@@ -12,17 +12,16 @@ while i<30,
 fo = fitoptions(gauss);
 
  % guess parameters
-a_guess = mean(y);
-[b_guess, x] = max(y);
+a_guess = mean(mean(y'));
+b_guess = max(max(y'));
 c_guess = randn;
 d_guess = 1;
-fo.StartPoint = [a_guess; b_guess; c_guess; d_guess];
+fo.StartPoint = [a_guess b_guess c_guess d_guess];
         % do we need to set these limits?
 % fo.Lower = [-b_guess; 0; min(rawdata(:,1)); -Inf];  
 % fo.Upper = [b_guess; Inf; max(rawdata(:,1)); Inf]; 
 gauss = setoptions(gauss, fo);
-
-    [currentfit,currentgof] = fit(x(:),y(:),gauss); % preform fit
+    [currentfit,currentgof] = fit(x(:),y(:),gauss); % perform fit
     if currentgof.sse < lowerror,
         bestfit = currentfit;
         lowerror = currentgof.sse;

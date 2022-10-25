@@ -21,9 +21,9 @@ G = repmat(1:length(locations),Num_reps,1); % groups for anova
 anova_p = anova1(rawdata(:), G(:), 'off'); % perform one-way anova
 
 if anova_p<0.05, % if significant
-
 % gaussfit function
-%[a,b,c,d] = gaussfit(locations,data); % perform gaussfit funcition
+G_locations = repmat(locations,Num_reps,1);
+[a,b,c,d] = gaussfit(G_locations,rawdata'); % perform gaussfit funcition
 
 
 else, % if not significant
