@@ -15,7 +15,7 @@ allSubFolders = genpath(fullfile(mycwd,mydir,myexp));
 remain = allSubFolders;
 listOfFolderNames = {};
 while true
-	[singleSubFolder, remain] = strtok(remain, ';'); %parses the genpath string by ";"
+	[singleSubFolder, remain] = strtok(remain, ';'); %separates the genpath string by ";"
 	if isempty(singleSubFolder)
 		break;
     end
@@ -38,4 +38,10 @@ d_list = [d_list d];
 
 clear myfilename
 end
+
+a_list=cell2mat(a_list);
+b_list=cell2mat(b_list);
+c_list=cell2mat(c_list);
+d_list=cell2mat(d_list);
+
 end
