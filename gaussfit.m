@@ -17,9 +17,8 @@ b_guess = max(max(y'));
 c_guess = randn;
 d_guess = 1;
 fo.StartPoint = [a_guess b_guess c_guess d_guess];
-        % do we need to set these limits?
-% fo.Lower = [-b_guess; 0; min(rawdata(:,1)); -Inf];  
-% fo.Upper = [b_guess; Inf; max(rawdata(:,1)); Inf]; 
+fo.Lower = [-b_guess; 0; min(min(x')); -Inf];  
+fo.Upper = [b_guess; Inf; max(max(x')); Inf]; 
 gauss = setoptions(gauss, fo);
     [currentfit,currentgof] = fit(x(:),y(:),gauss); % perform fit
     if currentgof.sse < lowerror,

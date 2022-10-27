@@ -1,15 +1,15 @@
 
-mean_a_ko = mean(a_ko_good)
-mean_a_wt = mean(a_wt_good)
+mean_a_ko = mean(a_ko_good);
+mean_a_wt = mean(a_wt_good);
 
-mean_b_ko = mean(b_ko_good)
-mean_b_wt = mean(b_wt_good)
+mean_b_ko = mean(b_ko_good);
+mean_b_wt = mean(b_wt_good);
 
-mean_c_ko = mean(c_ko_good)
-mean_c_wt = mean(c_wt_good)
+mean_c_ko = mean(c_ko_good);
+mean_c_wt = mean(c_wt_good);
 
-mean_d_ko = mean(d_ko_good)
-mean_d_wt = mean(d_wt_good)
+mean_d_ko = mean(d_ko_good);
+mean_d_wt = mean(d_wt_good);
 
 data = load('mouse_arm1.txt','-ascii');
 x = data(1,:);
@@ -25,3 +25,6 @@ plot(ko);
 xlabel('Locations (mm)'); 
 
 ylabel('Mean response (spikes/sec)');
+
+title('Gaussian Fits for wildtype vs knockout mice using mean a, b, c, and d values');
+legend('Wildtype','Knockout');
